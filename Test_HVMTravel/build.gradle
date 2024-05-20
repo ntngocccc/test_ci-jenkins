@@ -1,0 +1,79 @@
+//import java.awt.Desktop
+//import java.io.File
+//import org.openqa.selenium.WebDriver
+//import org.openqa.selenium.edge.EdgeDriver;
+plugins {
+    id 'java'
+    //id 'application'
+    //id 'io.qameta.allure' version '2.29.0'
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+//allure {
+//    version = '2.23.0'
+//    autoconfigure = true
+//    aspectjweaver = true
+//    allureJavaVersion = '2.23.0'
+//}
+
+//test {
+//    useTestNG()
+//    finalizedBy 'allureReport'
+//}
+//
+//allureReport {
+//    dependsOn test
+//    description = 'Generate Allure report.'
+//}
+
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.testng:testng:7.7.1'
+
+
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.0'
+
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    implementation group: 'io.appium', name: 'java-client', version: '7.5.1'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // https://mvnrepository.com/artifact/org.seleniumhq.webdriver/webdriver-selenium
+    implementation group: 'org.seleniumhq.webdriver', name: 'webdriver-selenium', version: '0.9.7376'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.3'
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.3'
+
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.7.1'
+    //testImplementation("io.qameta.allure:allure-testng")
+    /// https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+//    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.27.0'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-generator
+    //runtimeOnly group: 'io.qameta.allure', name: 'allure-generator', version: '2.29.0'
+
+
+
+
+
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+application {
+    //Define the main class for the application
+    mainClass = 'com.example.myapplication'
+}
+
+test {
+    useTestNG()
+}
+
